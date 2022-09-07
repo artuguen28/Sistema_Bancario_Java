@@ -8,10 +8,10 @@ public class Conta_Corrente {
     private float saldo;
     private int numeroConta;
     private int numeroAgencia;
-    ArrayList<Transacao> transacoes = new ArrayList<Transacao>();
+    private ArrayList<Transacao> transacoes;
     
     public Conta_Corrente(int numConta, int numAgencia) {
-        
+    	transacoes =  new ArrayList<Transacao>();
         numeroConta = numConta;
         numeroAgencia = numAgencia;
         saldo = 0.0f;
@@ -55,8 +55,9 @@ public class Conta_Corrente {
     public Boolean sacar(float v){
 
         if(saldo - v > 0.0f){
-
-            Transacao t = new Transacao(getSaldo(), v, "Depósito");
+        	
+            saldo -= v;
+            Transacao t = new Transacao(getSaldo(), v, "Saque");
             registrarTransacao(t);
 
             return true;
