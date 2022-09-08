@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Transacao {
 
-    protected float valorSaldo;
+    public float valorSaldo;
     public String operacao;
     public float valor;
     public String dataHora;

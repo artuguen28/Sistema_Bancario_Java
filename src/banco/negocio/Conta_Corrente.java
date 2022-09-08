@@ -17,15 +17,8 @@ public class Conta_Corrente {
         saldo = 0.0f;
     }
     
-    public void getExtrato(){
-        
-        System.out.println("Extrato bancário:");
-        
-        for(int i = 0; i < transacoes.size(); i++){
-            System.out.println(String.format("Operação: %s", transacoes.get(i).operacao));
-            System.out.println(String.format(": %s", transacoes.get(i).operacao));
-            
-        }
+    public ArrayList<Transacao> getExtrato(){
+        return transacoes;
     }
     
     public float getSaldo() {
@@ -40,8 +33,8 @@ public class Conta_Corrente {
         return numeroAgencia;
     }
 
-    public void registrarTransacao(Transacao transac){
-
+    private void registrarTransacao(Transacao transac){
+    	
         transacoes.add(transac);
     }
 
