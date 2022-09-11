@@ -6,6 +6,7 @@ public class Cliente {
     private String rg;
     private String endereco;
 
+	// Método construtor da classe Cliente
 
     public Cliente(String nome, String rg, String endereco) {
         this.nome = nome;
@@ -13,6 +14,8 @@ public class Cliente {
         this.endereco = endereco;
     }
 
+
+	// Implementeção dos getters e setters da classe Cliente
 
 	public String getNome() {
 		return nome;
