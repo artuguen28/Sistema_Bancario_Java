@@ -5,17 +5,14 @@ import java.util.ArrayList;
 public class CaixaEletronico {
     public static void main(String[] args) throws Exception {
     	
-        ArrayList<Cliente> clientes = new ArrayList<Cliente>();
         ArrayList<Conta_Corrente> contas = new ArrayList<Conta_Corrente>();
     	
     	Cliente cliente_1 = new Cliente("Carlos", "338627017", "Rua dos Barés");
     	Conta_Corrente conta_1 = new Conta_Corrente(706929, 9688, cliente_1);
     	
-    	
     	conta_1.depositar(525);
     	conta_1.sacar(300);
     	
-    	clientes.add(cliente_1);
     	contas.add(conta_1);
     	
     	Cliente cliente_2 = new Cliente("Maria", "438133018", "Avenida Ephigênio Salles");
@@ -25,17 +22,14 @@ public class CaixaEletronico {
     	conta_2.depositar(300);
     	conta_2.sacar(150);
     	
-    	clientes.add(cliente_2);
     	contas.add(conta_2);
     	
     	Cliente cliente_3 = new Cliente("Rodolfo", "338627017", "Avenida Autaz Mirim");
     	Conta_Corrente conta_3 = new Conta_Corrente(138617642, 1603, cliente_3);
     	
-    	
     	conta_3.depositar(700);
     	conta_3.sacar(415);
     	
-    	clientes.add(cliente_3);
     	contas.add(conta_3);
     	
     	System.out.print("############### Database do caixa eletrônico ############### \n\n");
