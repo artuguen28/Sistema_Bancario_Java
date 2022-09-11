@@ -1,23 +1,39 @@
 package banco.negocio;
 import java.util.ArrayList;
 
-
+import banco.persistencia.Persistência;
 
 public class Conta_Corrente {
-    
+   
     private float saldo;
     private int numeroConta;
     private int numeroAgencia;
     private ArrayList<Transacao> transacoes;
+    private Persistência persist;
+    private Cliente cliente;
     
-    public Conta_Corrente(int numConta, int numAgencia) {
+    public Conta_Corrente(int numConta, int numAgencia, Cliente cliente) {
+    	this.cliente = cliente;
+    	persist = new Persistência();
     	transacoes =  new ArrayList<Transacao>();
         numeroConta = numConta;
         numeroAgencia = numAgencia;
         saldo = 0.0f;
     }
     
-    public ArrayList<Transacao> getExtrato(){
+    
+    public Cliente getCliente() {
+		
+		return cliente;
+	}
+
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+
+	public ArrayList<Transacao> getExtrato(){
         return transacoes;
     }
     
@@ -34,8 +50,9 @@ public class Conta_Corrente {
     }
 
     private void registrarTransacao(Transacao transac){
-    	
         transacoes.add(transac);
+        
+        persist.salvar(this);
     }
 
     public void depositar(float v){
