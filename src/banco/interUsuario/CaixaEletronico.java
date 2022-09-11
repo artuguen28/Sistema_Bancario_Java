@@ -10,29 +10,34 @@ public class CaixaEletronico {
 		// ArrayList responsável por salvar as contas instanciadas.
         ArrayList<ContaCorrente> contas = new ArrayList<ContaCorrente>();
     	
-		// Instanciação do cliente_1 com suas respectivas ações no caixa eletrônico.
+		// Instanciação do cliente_1 com suas respectivas ações no caixa eletrônico e definição de seu estado.
     	Cliente cliente_1 = new Cliente("Carlos", "338627017", "Rua dos Barés");
+    	// Instanciação da conta_1 e definição de seu estado.
     	ContaCorrente conta_1 = new ContaCorrente(706929, 9688, cliente_1);
     	
+    	// Alteração no saldo da primeira conta antes de adicioná-la ao array contas
     	conta_1.depositar(525);
     	conta_1.sacar(300);
     	
     	contas.add(conta_1);
     	
-		// Instanciação do cliente_2 com suas respectivas ações no caixa eletrônico.
+    	// Instanciação do cliente_2 com suas respectivas ações no caixa eletrônico e definição de seu estado.
     	Cliente cliente_2 = new Cliente("Maria", "438133018", "Avenida Ephigênio Salles");
+    	// Instanciação da conta_2 e definição de seu estado.
     	ContaCorrente conta_2 = new ContaCorrente(12677361, 2221, cliente_2);
     	
-    	
+    	// Alteração no saldo da segunda conta antes de adicioná-la ao array contas
     	conta_2.depositar(300);
     	conta_2.sacar(150);
     	
     	contas.add(conta_2);
     	
-		// Instanciação do cliente_2 com suas respectivas ações no caixa eletrônico.
+    	// Instanciação do cliente_3 com suas respectivas ações no caixa eletrônico e definição de seu estado.
     	Cliente cliente_3 = new Cliente("Rodolfo", "338627017", "Avenida Autaz Mirim");
+    	// Instanciação da conta_3 e definição de seu estado.
     	ContaCorrente conta_3 = new ContaCorrente(138617642, 1603, cliente_3);
     	
+    	// Alteração no saldo da terceira conta antes de adicioná-la ao array contas
     	conta_3.depositar(700);
     	conta_3.sacar(415);
     	

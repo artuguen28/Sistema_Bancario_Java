@@ -17,13 +17,15 @@ public class ContaCorrente {
     public ContaCorrente(int numConta, int numAgencia, Cliente cliente) {
 
         /*
-         * A cada objeto da classe ContaCorrente criado, um obejto da classe
+         * A cada objeto da classe ContaCorrente criado, um objeto da classe
          * Persistencia e um array de objetos da classe Transacao são instanciados
          */
 
     	persist = new Persistencia();
     	transacoes =  new ArrayList<Transacao>();
-
+        
+    	/* Na linha 29, observa-se o relacionamento entre a classe ContaCorrente e a Cliente, 
+    	o qual é uma agregação, já que um objeto tem existência independente em relação ao outro */
     	this.cliente = cliente;
         this.numConta = numConta;
         this.numAgencia = numAgencia;
@@ -38,7 +40,12 @@ public class ContaCorrente {
      */ 
     
     private void registrarTransacao(Transacao transac){
-
+    	
+        /* Através da execução do método add para que o objeto da classe Transacao chamado no parâmetro
+         * seja armazenado no Array transacoes, faz-se possível observar o relacionamento entre a classe ContaCorrente e a Transacao,
+         * o qual é uma composição, já que os objetos desta estarão armazenados em um atributo de um objeto daquela, e o fim deste acarreta
+         * o fim daqueles. Logo, percebe-se uma dependência.
+         */
         transacoes.add(transac);
         persist.salvar(this);
     }
@@ -81,7 +88,7 @@ public class ContaCorrente {
     }
     
     
-    // Implementeção dos getters e setters da classe Cliente
+    // Implementação dos getters e setters do atributo cliente, e dos getters de numConta e numAgencia
     public Cliente getCliente() {
 		return cliente;
 	}
