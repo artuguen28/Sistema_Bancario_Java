@@ -24,8 +24,8 @@ public class ContaCorrente {
     	persist = new Persistencia();
     	transacoes =  new ArrayList<Transacao>();
         
-    	/* Na linha 29, observa-se o relacionamento entre a classe ContaCorrente e a Cliente, 
-    	o qual é uma agregação, já que um objeto tem existência independente em relação ao outro */
+    	/* Na linha 29, observa-se o relacionamento de agregação entre a classe ContaCorrente e a Cliente, 
+        já que um objeto tem existência independente em relação ao outro */
     	this.cliente = cliente;
         this.numConta = numConta;
         this.numAgencia = numAgencia;
